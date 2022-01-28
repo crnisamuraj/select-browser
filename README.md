@@ -14,8 +14,15 @@ create `/usr/bin/select-browser`
 ```
 #!/bin/sh
 
-BROWSER=$(zenity --list --radiolist --text '' --column='check' --column=browser --title='select your browser' TRUE "chromium" FALSE "firefox" FALSE "google-chrome-stable")
+# Zenity dialog
+#BROWSER=$(zenity --list --radiolist --text '' --column='check' --column=browser --title='select your browser' TRUE "firefox" FALSE "microsoft-edge-stable" FALSE "vivaldi-stable" FALSE "google-chrome-stable")
+
+# Kdialog
+BROWSER=$(kdialog --radiolist "Select a browser:" firefox "Firefox" on microsoft-edge-stable "Microsoft Edge" off vivaldi-stable "Vivaldi" off google-chrome-stable "Google Chrome" off)
+
+export BROWSER
 $BROWSER $* &
+
 
 ```
 To configure OS (Manjaro for me):
