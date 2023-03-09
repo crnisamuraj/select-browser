@@ -7,7 +7,7 @@ https://unix.stackexchange.com/questions/487203/choose-which-browser-to-open-lin
 
 
 
-A simple solution with zenity
+A simple solution with zenity or kdialog
 
 create `/usr/bin/select-browser`
 
@@ -47,4 +47,5 @@ StartupWMClass=select-browser
 
 
 modify `.local/share/applications/defaults.list`
+
 run `xdg-settings set default-web-browser select-browser.desktop`
